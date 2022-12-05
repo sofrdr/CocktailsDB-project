@@ -10,6 +10,7 @@ const NavContainer = styled.nav`
   height: 80px;
   border-bottom: 2px solid ${colors.primary};
   box-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  background-color: white;
 `;
 
 const NavWrapper = styled.div`
@@ -18,6 +19,7 @@ const NavWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   width: 1170px;
+  background-color: white;
 `;
 
 const StyledLink = styled(Link)`
