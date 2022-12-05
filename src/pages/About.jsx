@@ -20,6 +20,7 @@ const StyleText = styled.p`
   line-height: 32px;
   font-weight: 400;
   letter-spacing: 2px;
+  padding: 0 15px;
 `;
 
 const About = () => {
