@@ -9,9 +9,14 @@ import Header from "./components/Header";
 import SingleCocktail from "./pages/SingleCocktail";
 
 const GlobalStyle = createGlobalStyle`
+
+body, html{
+  height: 100%; 
+}
 div{
   font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: #f1f5f8;
+  height: 100%;
 }
 `;
 
