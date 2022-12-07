@@ -1,6 +1,8 @@
-import React from "react";
+import { React, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
+
+import { AppProvider } from "./utils/context";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -24,13 +26,15 @@ const App = () => {
   return (
     <Router>
       <GlobalStyle />
-      <Header />
-      <Routes>
-        <Route exact path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/cocktail/:id" element={<SingleCocktail />}></Route>
-        <Route path="*" element={<Error />}></Route>
-      </Routes>
+      <AppProvider>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/cocktail/:id" element={<SingleCocktail />}></Route>
+          <Route path="*" element={<Error />}></Route>
+        </Routes>
+      </AppProvider>
     </Router>
   );
 };
