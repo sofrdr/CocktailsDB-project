@@ -38,7 +38,6 @@ export const AppProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  console.log(cocktails);
   useEffect(() => {
     fetchData();
   }, []);
