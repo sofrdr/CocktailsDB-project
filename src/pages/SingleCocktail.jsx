@@ -104,7 +104,6 @@ const SingleCocktail = () => {
     getCocktail();
   }, []);
 
-  console.log(cocktail);
   const { name, category, glass, image, info, instructions, ingredients } =
     cocktail;
 

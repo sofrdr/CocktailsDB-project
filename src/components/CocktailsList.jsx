@@ -31,7 +31,14 @@ const CocktailsList = () => {
   const cocktail = cocktails.map((item) => {
     const { name, id, glass, info, image } = item;
     return (
-      <Cocktail id={id} name={name} glass={glass} info={info} image={image} />
+      <Cocktail
+        key={id}
+        id={id}
+        name={name}
+        glass={glass}
+        info={info}
+        image={image}
+      />
     );
   });
 
