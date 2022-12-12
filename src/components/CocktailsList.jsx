@@ -17,6 +17,14 @@ const ListContainer = styled.div`
   column-gap: 32px;
 `;
 
+const ErrorText = styled.h2`
+  letter-spacing: 4.8px;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 16px;
+  text-transform: capitalize;
+`;
+
 const CocktailsList = () => {
   const { cocktails, loading } = useContext(AppContext);
 
@@ -26,6 +34,10 @@ const CocktailsList = () => {
       <Cocktail id={id} name={name} glass={glass} info={info} image={image} />
     );
   });
+
+  if (cocktails.length < 1) {
+    return <ErrorText>No cocktail matched your search criteria</ErrorText>;
+  }
   return (
     <CocktailSection>
       <StyledTitle>Cocktails</StyledTitle>

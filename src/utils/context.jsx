@@ -7,7 +7,7 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [cocktails, setCocktails] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("a");
+  const [searchTerm, setSearchTerm] = useState("b");
 
   const fetchData = async () => {
     setIsLoading(true);
