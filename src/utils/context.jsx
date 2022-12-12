@@ -7,7 +7,7 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [cocktails, setCocktails] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("b");
+  const [searchTerm, setSearchTerm] = useState("a");
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -40,9 +40,11 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [searchTerm]);
   return (
-    <AppContext.Provider value={{ cocktails, isLoading }}>
+    <AppContext.Provider
+      value={{ cocktails, isLoading, searchTerm, setSearchTerm }}
+    >
       {children}
     </AppContext.Provider>
   );

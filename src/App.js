@@ -1,7 +1,7 @@
 import { React, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
-
+import colors from "./utils/colors";
 import { AppProvider } from "./utils/context";
 
 import Home from "./pages/Home";
@@ -25,6 +25,8 @@ div{
 h3,h4{
   margin: 0;
 }
+
+
 `;
 
 const App = () => {
