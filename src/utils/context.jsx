@@ -1,6 +1,6 @@
 import { React, createContext, useState, useEffect } from "react";
 
-const url = "www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 export const AppContext = createContext();
 
@@ -14,12 +14,31 @@ export const AppProvider = ({ children }) => {
     try {
       const response = await fetch(`${url}${searchTerm}`);
       const data = await response.json();
-      console.log(data);
+      const { drinks } = data;
+
+      if (drinks) {
+        const newCocktails = drinks.map((item) => {
+          const { idDrink, strDrink, strAlcoholic, strDrinkThumb, strGlass } =
+            item;
+          return {
+            id: idDrink,
+            name: strDrink,
+            image: strDrinkThumb,
+            info: strAlcoholic,
+            glass: strGlass,
+          };
+        });
+        setCocktails(newCocktails);
+      } else {
+        setCocktails([]);
+      }
     } catch (error) {
       console.log(error);
     }
+    setIsLoading(false);
   };
 
+  console.log(cocktails);
   useEffect(() => {
     fetchData();
   }, []);
