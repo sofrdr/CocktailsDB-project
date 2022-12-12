@@ -14,11 +14,16 @@ const GlobalStyle = createGlobalStyle`
 
 body, html{
   height: 100%; 
+  background-color: #f1f5f8;
+  margin: 0;
 }
 div{
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  background-color: #f1f5f8;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
   height: 100%;
+}
+
+h3,h4{
+  margin: 0;
 }
 `;
 

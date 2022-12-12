@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 import { StyledButton } from "../utils/style";
 
 const CocktailContainer = styled.article`
-  background: #fff;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 32px;
-  display: grid;
-  grid-template-rows: auto 1fr;
   box-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   transition: all linear 0.3s;
-
   &:hover {
     box-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   }
@@ -25,6 +23,7 @@ const StyledImg = styled.img`
 
 const CocktailFooter = styled.div`
   padding: 24px;
+  background-color: white;
 `;
 
 const StyledTitle = styled.h3`

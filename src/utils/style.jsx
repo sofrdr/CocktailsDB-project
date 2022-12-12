@@ -17,3 +17,12 @@ export const StyledButton = styled.button`
     color: ${colors.primary};
   }
 `;
+
+export const StyledTitle = styled.h1`
+  font-size: 32px;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 56px;
+  letter-spacing: 4.8px;
+`;

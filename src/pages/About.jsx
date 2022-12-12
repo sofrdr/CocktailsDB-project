@@ -1,19 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { StyledTitle } from "../utils/style";
 
 const TextContainer = styled.section`
   padding: 80px 0;
   margin: 0 auto;
   max-width: 640px;
-`;
-
-const StyledTitle = styled.h1`
-  font-size: 32px;
-  text-transform: capitalize;
-  text-align: center;
-  margin-top: 16px;
-  margin-bottom: 56px;
-  letter-spacing: 4.8px;
 `;
 
 const StyleText = styled.p`
