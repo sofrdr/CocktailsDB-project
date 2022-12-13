@@ -3,6 +3,7 @@ import { AppContext } from "../utils/context";
 import { StyledTitle } from "../utils/style";
 import styled from "styled-components";
 import Cocktail from "./Cocktail";
+import Loader from "../utils/Atoms";
 
 const CocktailSection = styled.section`
   padding: 80px 0;
@@ -26,7 +27,7 @@ const ErrorText = styled.h2`
 `;
 
 const CocktailsList = () => {
-  const { cocktails, loading } = useContext(AppContext);
+  const { cocktails, isLoading } = useContext(AppContext);
 
   const cocktail = cocktails.map((item) => {
     const { name, id, glass, info, image } = item;
@@ -42,7 +43,10 @@ const CocktailsList = () => {
     );
   });
 
-  if (cocktails.length < 1) {
+  if (isLoading) {
+    return <Loader />;
+  }
+  if (cocktails && cocktails.length < 1) {
     return <ErrorText>No cocktail matched your search criteria</ErrorText>;
   }
   return (
